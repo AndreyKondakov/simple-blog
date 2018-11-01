@@ -14,7 +14,7 @@
     </div>
   <% end %>
 
-  <p>
+<!--   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
   </p>
@@ -22,10 +22,25 @@
   <p>
     <%= form.label :text %><br>
     <%= form.text_area :text %>
-  </p>
+  </p> -->
 
-  <p>
-    <%= form.submit %>
-  </p>
 
+<div class="form-block">
+  <div class="input-group mb-3 ">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default"><%= form.label :title %><br></span>
+    </div>
+    <%= form.text_field :title %>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><%= form.label :text %><br></span>
+    </div>
+    <%= form.text_area :text %>
+  </div>
+
+    <p>
+      <%= form.submit %>
+    </p>
+</div>
 <% end %>
