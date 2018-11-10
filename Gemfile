@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+
 #my gems
 
 gem 'bootstrap', '~> 4.1.3'
@@ -22,6 +23,9 @@ gem 'popper_js', '~> 1.14.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem 'rails_admin', '~> 1.4', '>= 1.4.2'
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
