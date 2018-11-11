@@ -1,4 +1,4 @@
-<main role="main" class="container">
+<main role="main" class="container article-page">
   <div class="row">
     <div class="col-md-8 blog-main">
       <h3 class="pb-3 mb-4 font-italic border-bottom">
@@ -12,14 +12,56 @@
         <p><%= @article.text %></p>
       </div><!-- /.blog-post -->
 
-      
-
       <nav class="blog-pagination">
+        <%= link_to 'Destroy', article_path(@article), class: 'btn btn-outline-secondary',
+	              method: :delete,
+	              data: { confirm: 'Are you sure?' } %>
         <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-outline-primary' %> 
         <%= link_to 'Back', articles_path, class: 'btn btn-outline-secondary' %>
       </nav>
-    </div>
 
+      <div class="comments">
+	      <h4>Comments</h4>
+
+				<% if @article.comments.present? %>
+					<%= render @article.comments %>
+				<% end %>
+
+				<h4>Add a comment:</h4>
+				<%= render 'comments/form' %>
+			</div>
+
+<!-- 			<form>
+			  <div class="form-group">
+			    <label for="exampleFormControlInput1">Email address</label>
+			    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleFormControlSelect1">Example select</label>
+			    <select class="form-control" id="exampleFormControlSelect1">
+			      <option>1</option>
+			      <option>2</option>
+			      <option>3</option>
+			      <option>4</option>
+			      <option>5</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleFormControlSelect2">Example multiple select</label>
+			    <select multiple class="form-control" id="exampleFormControlSelect2">
+			      <option>1</option>
+			      <option>2</option>
+			      <option>3</option>
+			      <option>4</option>
+			      <option>5</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleFormControlTextarea1">Example textarea</label>
+			    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+			  </div>
+			</form> -->
+    </div>
 
     <aside class="col-md-4 blog-sidebar">
       <div class="p-3 mb-3 bg-light rounded">
@@ -59,25 +101,4 @@
 
 </main>
 
-<p>
-	<strong>Title:</strong>
-	<%=	@article.title %>
-</p>
 
-<p>
-	<strong>Text:</strong>
-	<%= @article.text %>
-</p>
-
-<h2>Comments</h2>
-
-<% if @article.comments.present? %>
-	<%= render @article.comments %>
-<% end %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-
-
-<%= link_to "Edit", edit_article_path(@article) %> 
-<%= link_to 'Back', articles_path %>
