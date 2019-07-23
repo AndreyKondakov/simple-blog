@@ -16,7 +16,7 @@ gem 'jbuilder', '~> 2.5'
 
 #my gems
 
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'pry', '~> 0.10.3'
 gem 'popper_js', '~> 1.14.3'
